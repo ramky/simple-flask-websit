@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-flask-website-app
-  # namespace: ns-simple-flask-website-app
 spec:
   selector:
     matchLabels:
@@ -15,8 +14,8 @@ spec:
         app: simple-flask-website-app
     spec:
       containers:
-        - name: simple_flask_app
-          image: registry.ram-iyer.com/simple_flask_app
+        - name: simple-flask-website
+          image: registry.ram-iyer.com/simple-flask-website
           # imagePullPolicy: IfNotPresent
           imagePullPolicy: Always
           ports:
