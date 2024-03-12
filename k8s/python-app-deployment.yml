@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ramiyer-app
-  # namespace: ns-ramiyer-app
+  name: simple-flask-website-app
+  # namespace: ns-simple-flask-website-app
 spec:
   selector:
     matchLabels:
-      app: ramiyer-app
+      app: simple-flask-website-app
   replicas: 3
   template:
     metadata:
       labels:
-        app: ramiyer-app
+        app: simple-flask-website-app
     spec:
       containers:
-        - name: ramiyer
-          image: registry.ram-iyer.com/ramiyer
+        - name: simple_flask_app
+          image: registry.ram-iyer.com/simple_flask_app
           # imagePullPolicy: IfNotPresent
           imagePullPolicy: Always
           ports:
