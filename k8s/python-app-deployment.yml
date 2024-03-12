@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ramiyer-app
+  # namespace: ns-ramiyer-app
+spec:
+  selector:
+    matchLabels:
+      app: ramiyer-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: ramiyer-app
+    spec:
+      containers:
+        - name: ramiyer
+          image: registry.ram-iyer.com/ramiyer
+          # imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+      imagePullSecrets:
+        - name: regcred
+
